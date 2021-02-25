@@ -111,6 +111,7 @@ class GitManager {
             logger.debug("Failed cloning the repository from ${this.gitURL}: ${e.message}", e)
             throw new Exception("Failed cloning the repository from ${this.gitURL}: ${e.message}", e)
         }
+        performPull(git)
         repo = git.getRepository()
     }
 
